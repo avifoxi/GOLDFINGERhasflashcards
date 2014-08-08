@@ -1,6 +1,6 @@
 ###  SIMPLE USER TEST ROUND CREATION
 
-fishie = User.create(name: 'fishie')
+fishie = User.create(name: 'fishie', email: 'fish@ocean.net', password: 'goldfish')
 
 deck1 = Deck.create(name: 'fish qs')
 
@@ -17,17 +17,14 @@ card2 = Card.create(question: 'are you a dog', answer: 'no')
 deck1.cards << card1
 deck1.cards << card2
 
-round1.cards # => 2
+deck1.cards
 
-
-deck1.cards # => card1
-
-card1.guesses.create(user_input: 'no')
+card1.guesses.create(user_input: 'no') #needs to have a round input from controller
 card1.guesses.create(user_input: 'yes')
 
 c1guesses = card1.guesses # =>
 
-fishie.rounds # =>
+fishie.rounds
 
 
 
