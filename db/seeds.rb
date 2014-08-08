@@ -25,6 +25,9 @@ animals_array.each do |row|
 end
 
 
+
+
+
 # deck1.cards << card1
 # deck1.cards << card2
 
