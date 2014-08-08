@@ -14,6 +14,7 @@ card1 = Card.create(question: 'are you a fish', answer: 'yes')
 
 card2 = Card.create(question: 'are you a dog', answer: 'no')
 
+
 deck1.cards << card1
 deck1.cards << card2
 
