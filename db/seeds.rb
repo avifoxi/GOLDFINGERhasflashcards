@@ -3,6 +3,7 @@
 eddie = User.create(name: "Eddie", email: "ehk@gmail.com", password: "123" )
 avi = User.create(name: 'Avi', email: "avi@avi.avi", password: "avi")
 
+
 math_deck = Deck.create(name: "Math")
 animal_deck = Deck.create(name: "Animals")
 
@@ -42,6 +43,7 @@ end
 # c1guesses = card1.guesses # =>
 
 # fishie.rounds # =>
+
 
 
 
