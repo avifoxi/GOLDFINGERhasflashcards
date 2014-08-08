@@ -1,4 +1,4 @@
-  class Round < ActiveRecord::Base
+class Round < ActiveRecord::Base
   # Remember to create a migration!
   belongs_to :user
   belongs_to :deck
@@ -15,8 +15,5 @@
   def next_card
     self.deck.cards.sample
   end
-
-end
-
 
 end
