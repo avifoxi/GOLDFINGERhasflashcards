@@ -1,4 +1,4 @@
-###  SIMPLE USER TEST ROUND CREATION 
+###  SIMPLE USER TEST ROUND CREATION
 
 fishie = User.create(name: 'fishie')
 
@@ -12,10 +12,10 @@ card1 = Card.create(question: 'are you a fish', answer: 'yes')
 
 card2 = Card.create(question: 'are you a dog', answer: 'no')
 
-deck.cards << card1 
-deck.cards << card2 
+deck.cards << card1
+deck.cards << card2
 
-round1.cards # => 2 
+round1.cards # => 2
 
 
 deck.cards # => card1
@@ -25,7 +25,7 @@ card1.guess.create(input: 'yes')
 
 c1guesses = card1.guesses # =>
 
-fishie.rounds # => 
+fishie.rounds # =>
 
 
 
