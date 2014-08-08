@@ -28,14 +28,6 @@ card1.guesses.create(user_input: 'yes')
 
 c1guesses = card1.guesses # =>
 
-fishie.rounds # =>
-
-try something like this: 
-def over? 
-total_chances
-self.guesses.each do |guess|
-guess.card_id
-
 
 
 
