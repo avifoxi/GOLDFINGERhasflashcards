@@ -1,1 +1,13 @@
-edit
+<%= session[:error] if session[:error] %>
+
+
+<form action="/decks/<%= @deck.id %>/cards/<%= @card.id %>/edit" method="POST">
+	<input type="hidden" name="_method" value="PATCH"/>
+
+	<input type="text" name="card[question]" value="<%= @card.question%>">
+
+	<input type="text" name="card[answer]" value="<%= @card.answer%>">
+
+	<input type="submit">
+
+</form>
