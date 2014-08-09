@@ -17,17 +17,22 @@ get '/decks/new' do
   erb :"/decks/new"
 end
 
-post 'decks/create' do 
-  @user = User.find(session[:user_id])
-  @deck = Deck.create()
-	'create a new deck associated with the user as author'
-  redirect '/decks/:deck_id/card/new'
+post '/decks/create' do 
+  # @user = User.find(session[:user_id])
+  @deck = Deck.create(params[:deck])
+  # @user.decks << @deck
+
+  redirect "/decks/#{@deck.id}"
+end
+
+get '/decks/undies' do 
+  'nu?'
 end
 
 get '/decks/:deck_id' do
-  @deck = Deck.find(:deck_id)
-  @cards = @deck.cards
-  
+  @deck = Deck.find(params[:deck_id])
+  @cards = @deck.cards ||= Card.new(question: 'What will your first card be?')
+  erb :"decks/show_one"
 
 end
 
@@ -35,3 +40,5 @@ get "/decks/:deck_id/card/new" do
 
 
 end
+
+
