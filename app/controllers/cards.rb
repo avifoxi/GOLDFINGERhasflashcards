@@ -4,7 +4,7 @@ get "/decks/:deck_id/card/new" do
 
 end
 
-post "/decks/:deck_id/card/create" do
+post "/decks/:deck_id/cards/create" do
 	@card = Card.new(params[:card])
 	@deck = Deck.find(params[:deck_id])
 	if @card.save
@@ -14,12 +14,10 @@ post "/decks/:deck_id/card/create" do
 		session[:error] = 'Card creation Error'
 		erb :"decks/cards/edit"
 	end
-
- 
-  # erb :"decks/cards/new"
 end
 
-get '/decks/:deck_id/card/:card_id/edit' do 
-
+get '/decks/:deck_id/card/:card_id/edit' do
+ 	@card = Card.find(params[:card_id])
+	@deck = Deck.find(params[:deck_id])
 	erb :"decks/cards/edit"
 end
