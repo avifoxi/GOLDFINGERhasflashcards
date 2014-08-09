@@ -12,3 +12,7 @@ post '/decks/:deck_id/round/create' do
   redirect '/decks/rounds/play'
 end
 
+get '/decks/new' do 
+	puts "I'm a logged in user, and I wanna make me a new deck. Whoop!"
+
+end
