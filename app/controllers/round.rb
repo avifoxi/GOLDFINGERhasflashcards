@@ -11,6 +11,9 @@ end
 get '/decks/rounds/results' do
 
   @round = Round.find(session[:round_id])
+  @guesses = Guess.where(round_id: @round.id)
+  @correct_guesses = @guesses.select {|guess| guess.correct? }
+
   erb :'/decks/rounds/results'
 end
 
