@@ -1,1 +1,9 @@
 <h2><%= @deck.name %></h2>
+
+<% @cards.each do |card| %>
+
+	<p><%= card.question %></p>
+
+<%end%>
+
+<a href="/decks/<%= @deck.id %>/card/new"><button>Add a Card To This Deck</button></a>
