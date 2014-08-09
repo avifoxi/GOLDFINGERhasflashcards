@@ -7,3 +7,22 @@
 th {
   text-align: left;
 }
+
+h1 {
+  text-align: center;
+  font-size: 4em;
+  font-family: Georgia;
+  letter-spacing: 8px;
+  background: -webkit-gradient(
+    linear,
+    left top, left bottom,
+    from(#CCCC00),
+    to(#FFFF19)
+    );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+body {
+  background-image: -webkit-linear-gradient(right, #1a1a1a, #4C4C4C);
+}
