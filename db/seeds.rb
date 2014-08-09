@@ -11,10 +11,11 @@ eddie_round_1 = eddie.rounds.create
 #round1 = fishie.rounds.create(deck: deck1) -- in place of line10 when paired with line 7
 # eddie_round_1.rounds << round1
 eddie_round_1.deck = animal_deck
+eddie_round_1.save
 
 avi_round_1 = avi.rounds.create
 avi_round_1.deck = math_deck
-
+avi_round_1.save
 
 
 5.times do |i|

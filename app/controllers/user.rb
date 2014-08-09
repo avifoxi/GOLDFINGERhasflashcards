@@ -24,6 +24,6 @@ post '/logout' do
   puts "will also redirect to homepage"
 end
 
-get 'users/:id/results' do
+get '/users/:id/results' do
   puts "display all results"
 end
