@@ -12,12 +12,12 @@ post '/decks/:deck_id/round/create' do
   redirect '/decks/rounds/play'
 end
 
-get '/decks/new' do 
-  
+get '/decks/new' do
+
   erb :"/decks/new"
 end
 
-post '/decks/create' do 
+post '/decks/create' do
   # @user = User.find(session[:user_id])
   @deck = Deck.create(params[:deck])
   # @user.decks << @deck

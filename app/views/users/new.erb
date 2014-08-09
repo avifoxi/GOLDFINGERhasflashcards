@@ -1,3 +1,6 @@
+<% if flash[:errors] %>
+  <%= flash[:errors] %>
+<% end %>
 <form action="/users/create" method="post">
   <input type="text" name="user[name]"><br>
   <input type="text" name="user[email]"><br>
