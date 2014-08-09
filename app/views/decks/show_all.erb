@@ -2,7 +2,7 @@
 <br>
 
 <form action="/decks/:deck_id/round/create" method="POST">
- <select name='deck_id'>
+ <select name='id'>
   <% @decks.each do |deck| %>
     <option value=<%= deck.id %>><%= deck.name %></option>
   <% end %>

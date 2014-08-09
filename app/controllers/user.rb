@@ -1,5 +1,8 @@
 get '/' do
- puts "homepage with welcome and either (1) login/sign up options or (2) start new round option if you are logged in"
+ puts "homepage with welcome and either:"
+ puts "(1) login/sign up options or "
+ puts "(2) start new round option if you are logged in"
+ erb :index
 end
 
 get '/users/new' do
