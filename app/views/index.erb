@@ -1,4 +1,20 @@
 <h2>Would you like to play a game?</h2>
 
+<h3> Sign in to play!</h3>
+<form action="/login" method="post">
+  <input type="text" name="email" placeholder="email">
+  <input type="password" name="password" placeholder="password">
+  <input type="submit" value="Login">
+</form>
+<br><hr>
+
+<h3>Create an account!</h3>
+<form action="/signup" method="post">
+  <input type="text" name="name" placeholder="name"><br>
+  <input type="text" name="email" placeholder="email"><br>
+  <input type="password" name="password" placeholder="password"><br>
+  <input type="submit" value="Signup!">
+</form>
+
 <p><a href="/decks/show_all">Start a New Round if you're logged in</a></a></p>
 
