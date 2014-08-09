@@ -13,6 +13,25 @@ post '/decks/:deck_id/round/create' do
 end
 
 get '/decks/new' do 
-	puts "I'm a logged in user, and I wanna make me a new deck. Whoop!"
+  
+  erb :"/decks/new"
+end
+
+post 'decks/create' do 
+  @user = User.find(session[:user_id])
+  @deck = Deck.create()
+	'create a new deck associated with the user as author'
+  redirect '/decks/:deck_id/card/new'
+end
+
+get '/decks/:deck_id' do
+  @deck = Deck.find(:deck_id)
+  @cards = @deck.cards
+  
+
+end
+
+get "/decks/:deck_id/card/new" do
+
 
 end
