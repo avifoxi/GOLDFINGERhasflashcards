@@ -13,16 +13,8 @@ get '/decks/rounds/results' do
   @round = Round.find(session[:round_id])
   @guesses = Guess.where(round_id: @round.id)
   @correct_guesses = @guesses.select {|guess| guess.correct? }
+  #methods could be moved to models during refactoring
 
   erb :'/decks/rounds/results'
 end
 
-  # puts <<-TEXT
-  #   display the page youre going to play on
-  #   @round = Round.find(:id)
-  #   if @round.over? <-(we'll have to make this method)
-  #     redirect to users restuls
-  #   else
-  #     @card = @round.next_card <-(we'll have to make this method)
-  #     redirect to 'round/:id'
-  #  TEXT

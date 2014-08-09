@@ -10,5 +10,9 @@ class User < ActiveRecord::Base
 
   ## BUG BUG  - user should have many decks through rounds
 
+  def self.leaderboard
+    @leaderboard = []
+    U
+
 
 end

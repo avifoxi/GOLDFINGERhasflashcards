@@ -2,6 +2,7 @@ get '/' do
  puts "homepage with welcome and either:"
  puts "(1) login/sign up options or "
  puts "(2) start new round option if you are logged in"
+ @users = User.all
  erb :index
 end
 
