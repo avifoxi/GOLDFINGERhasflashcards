@@ -2,8 +2,16 @@
 <h3>what a feeling.</h3>
 
 <nav>
-	<button>LOGIN or OUT</button>
-	<button>SIGNUP if you're not signed up</button>
+
+	<% if session[:user_id] %>
+		<button>LOG OUT</button>
+		<a href="/users/<%= session[:user_id]%>/results"></a><button> Go to Profile Page with your personal stats</button>
+	<% else %>
+		<button>LOGIN</button>
+		<button>SIGNUP if you're not signed up</button>
+	<% end %>
+
 	<a href="/"><button>HOME</button></a>
+	<a href='/decks/show_all'><button>See All Decks</button></a>
 </nav>
 <br><hr><br>
