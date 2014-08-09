@@ -4,11 +4,11 @@
 <nav>
 
 	<% if session[:user_id] %>
-		<button>LOG OUT</button>
+		<form action="/logout" method="POST"><input type="submit" value="Log Out"></form>
 		<a href="/users/<%= session[:user_id]%>/results"></a><button> Go to Profile Page with your personal stats</button>
 	<% else %>
 		<button>LOGIN</button>
-		<button>SIGNUP if you're not signed up</button>
+		<a href="/users/new"><button>SIGNUP if you're not signed up</button></a>
 	<% end %>
 
 	<a href="/"><button>HOME</button></a>
