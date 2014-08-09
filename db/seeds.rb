@@ -49,7 +49,7 @@ animals_array.each do |row|
 end
 
 
-dinosaur_deck = Dec.create(name: "Dinosaurs")
+# dinosaur_deck = Deck.create(name: "Dinosaurs")
 
 
 # deck1.cards << card1
