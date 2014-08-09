@@ -4,3 +4,6 @@
 <p>Deck: <%= @round.deck.name %></p>
 
 <p>Check guesses to generate results...</p>
+<p>Total guesses: <%= @guesses.count %></p>
+<p>Correct guesses: <%= @correct_guesses.count %></p>
+<p>Incorrect guesses: <%= @guesses.count - @correct_guesses.count %></p> 
