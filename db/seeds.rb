@@ -16,13 +16,13 @@ avi_round_1 = avi.rounds.create
 avi_round_1.deck = math_deck
 
 5.times do |i|
-  math_deck.cards << Card.create(question: 'what is this number?', answer: i.to_s)
+  math_deck.cards << Card.create(question: "what is this number (answer: #{i})?", answer: i.to_s)
 end
 
 animals_array = %w(Cheetah Tiger Lion Panther Jaguar)
 
 animals_array.each do |row|
-  animal_deck.cards << Card.create(question: 'what animal is this?', answer: row )
+  animal_deck.cards << Card.create(question: "what animal is this animal (answer: #{row})?", answer: row )
 end
 
 
