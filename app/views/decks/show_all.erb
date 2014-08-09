@@ -9,3 +9,7 @@
   </select>
   <input type="submit" value="Click">
 </form>
+
+<%= if session[:user_id] %>
+	<a href="/decks/new"><button>Wanna Make a New Deck?</button></a>
+<%= end %>
