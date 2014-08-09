@@ -11,7 +11,7 @@ post '/answer' do
 
   if @round.over?
     redirect '/decks/rounds/results'
-else
+  else
     @card = @round.next_card
     @guess = Guess.create(round_id: @round.id, card_id: @card.id, user_input: "need input")
     session[:guess_id] = @guess.id

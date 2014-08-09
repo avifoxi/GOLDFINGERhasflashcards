@@ -4,8 +4,7 @@ get '/decks/show_all' do
 end
 
 post '/decks/:deck_id/round/create' do
-  # @user = User.find(session[:id]) if session[:id]
-  @user = User.find(1) # replace with line above once login is implemented
+  @user = User.find(session[:user_id]) if session[:user_id]
   @deck = Deck.find(params[:id])
   @round = Round.create(user: @user, deck: @deck)
   session[:round_id] = @round.id
