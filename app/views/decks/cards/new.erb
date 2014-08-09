@@ -2,9 +2,9 @@
 
 <form action="/decks/<%= @deck.id %>/card/create">
 
-	<input type="text" placeholder="Ask a Good Question!">
+	<input type="text" name="card[question]" placeholder="Ask a Good Question!">
 
-	<input type="text" placeholder="Give a Good Answer!">
+	<input type="text" name="card[answer]" placeholder="Give a Good Answer!">
 
 	<input type="submit">
 
