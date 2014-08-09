@@ -6,7 +6,9 @@ class Round < ActiveRecord::Base
   has_many :cards, through: :guesses
 
   def over?
-    @card_list ||= self.deck.cards.map { |card| card.id }
+    deck_cards ||= self.deck.cards.map { |card| card.id }
+    played_cards = self.guesses.map { |guess| guess.card_id }
+    @card_list = deck_cards - played_cards
     return true if @card_list.empty?
   end
 
