@@ -1,0 +1,13 @@
+<h2>Welcome to the game <%= @user.name %>!</h2>
+
+<h3>You are playing with the <%= @deck.name %> deck. Have fun!</h3>
+
+<p>Your first question is:</p>
+<br>
+<p><%= @card.question %></p>
+
+<form action="/answer" method="POST">
+  <input type="text" placeholder="your answer goes here">
+  <input type="submit" value="Click">
+</form>
+
