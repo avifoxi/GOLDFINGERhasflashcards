@@ -1,3 +1,11 @@
 <p>Make a New Card for the <%= @deck.name %> deck.</p>
 
-<form action=""></form>
+<form action="/decks/<%= @deck.id %>/card/create">
+
+	<input type="text" placeholder="Ask a Good Question!">
+
+	<input type="text" placeholder="Give a Good Answer!">
+
+	<input type="submit">
+
+</form>
