@@ -25,10 +25,6 @@ post '/decks/create' do
   redirect "/decks/#{@deck.id}"
 end
 
-get '/decks/undies' do 
-  'nu?'
-end
-
 get '/decks/:deck_id' do
   @deck = Deck.find(params[:deck_id])
   @cards = @deck.cards ||= Card.new(question: 'What will your first card be?')
