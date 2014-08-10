@@ -4,7 +4,7 @@
 post '/rounds/:round_id/card/:card_id/guess' do
   @round = Round.find(params[:round_id])
   @card = Card.find(params[:card_id])
-
+  @card.answer.casecmp(params[:guess][:user_input]) == 0 ? session[:result] = 'correct' : session[:result] = 'incorrect'
   @guess = @card.guesses.create(params[:guess])
   @round.guesses << @guess
 

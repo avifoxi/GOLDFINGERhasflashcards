@@ -21,6 +21,7 @@ get '/rounds/:round_id/play' do
   @round = Round.find(params[:round_id])
   
   if @round.over?
+    session[:answer].clear
     redirect "/rounds/#{@round.id}/results"
   end
 
