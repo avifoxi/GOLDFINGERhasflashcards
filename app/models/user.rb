@@ -26,4 +26,25 @@ class User < ActiveRecord::Base
     @user.password = params[:password]
     @user.save!
   end
+
+  def self.leaderboard(num = 3)
+    User.sort_results[0..num - 1]
+  end
+
+  def self.sort_results
+    results = User.get_results
+    results.each do |round|
+      round[:score] = ((round[:guesses].where(correct: true).length * 50) - (round[:guesses].where(correct: false).length * 75))
+    end
+    results.sort_by! {|key| key[:score]}.reverse!
+  end
+
+  def get_results
+    self.rounds.map { |round| {round: round.id, user: round.user.name, deck: round.deck.name, guesses: round.guesses} } 
+  end
+
+  def self.get_results
+    User.all.map { |user| user.get_results }.flatten
+  end
+
 end
