@@ -5,8 +5,22 @@ class Guess < ActiveRecord::Base
   belongs_to :round
   belongs_to :card
 
+  after_initialize do 
+  	self.correct?
+  end
+
   def correct?
-    user_input.downcase == Card.find(card_id).answer.downcase
+  	unless self.correct == nil
+  		return nil
+  	end
+  	card = self.card
+  	if card.answer.downcase == self.user_input.downcase
+  		self.correct = true
+  		self.save
+    else 
+    	self.correct = false
+    	self.save
+    end
   end
 
 end
