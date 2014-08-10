@@ -21,6 +21,7 @@ get '/rounds/:round_id/play' do
   @round = Round.find(params[:round_id])
   
   if @round.over?
+    session[:result].clear
     redirect "/rounds/#{@round.id}/results"
   end
 
@@ -34,8 +35,10 @@ end
 get '/rounds/:round_id/results' do
 
   @round = Round.find(params[:round_id])
-  @guesses = Guess.where(round_id: @round.id)
-  @correct_guesses = @guesses.select {|guess| guess.correct? }
+  
+  @guesses = @round.guesses
+  
+  @correct_guesses = @guesses.select {|guess| guess.correct == true }
 
   erb :'/decks/rounds/results'
 end

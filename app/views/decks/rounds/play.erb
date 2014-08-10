@@ -2,7 +2,11 @@
 
 <h3>You are playing with the <%= @round.deck.name %> deck. Have fun!</h3>
 
-<p>Your first question is:</p>
+<% if session[:result] %>
+	<div class="result">Your answer was <%= session[:result] %></div>
+<% end %>
+
+<p>Your question is:</p>
 <br>
 <p><%= @card.question %></p>
 

@@ -1,0 +1,31 @@
+<h2>Special Agent <%= @user.name %></h2>
+
+<!-- referenced as decks - this should be a partial eventually, that can be used both here on the user profile, and within the show_all to diplay all decks -->
+
+<% if @decks %>
+	<h3>Authored Missions</h3>
+
+	<ol>
+	<% @decks.each do |deck| %>
+		<li><%= deck.name %>. Used in <%=deck.rounds.count%> Rounds!</li>
+	<%end%>
+	</ol>
+	
+<% else %>
+	<h3>No Authored Missions Yet.</h3>
+	<% if @user.id == session[:user_id]%>
+		<a href="/decks/new"><button>Author a New Mission!</button></a>
+	<%end%>
+<% end %>
+
+
+<% if @rounds %>
+	<h3>Completed Missions</h3>
+	<h4>Click for Results Page</h4>
+	<ol>
+		<% @rounds.each do |round| %>
+			<li><a href="/rounds/<%= round.id %>/results"><%= round.deck.name %></a></li>
+		<%end%>
+	</ol>
+
+<% end %>

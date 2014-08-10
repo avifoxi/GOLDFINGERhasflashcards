@@ -34,7 +34,24 @@ post '/logout' do
   redirect '/'
 end
 
-get '/users/:id/results' do
-  'hello velt'
-  # @user
+### USER PROFILE PAGE // MISSION DEBRIEFINGS
+
+get '/users/:user_id' do
+  @user = User.find(params[:user_id])
+  @decks = @user.authored_decks
+  @rounds = @user.rounds
+
+  erb :"users/profile"
 end
+
+
+## USERS DISPLAY PAGE // 00_ AGENTS
+
+
+
+
+
+
+
+
+
