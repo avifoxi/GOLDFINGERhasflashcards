@@ -8,6 +8,9 @@
 
 <p>Your question is:</p>
 <br>
+<% if @card.image %>
+	<p><img src="<%=@card.image.url%>"></p>
+<% end %>
 <p><%= @card.question %></p>
 
 <form action="/rounds/<%= @round.id%>/card/<%= @card.id %>/guess" method="POST">

@@ -12,6 +12,7 @@ post '/decks/round/create' do
   @deck = Deck.find(params[:deck_id])
   @round = @user.rounds.create(deck: @deck )
 
+  session[:result] = nil
   redirect "/rounds/#{@round.id}/play"
 end
 
@@ -21,7 +22,7 @@ get '/rounds/:round_id/play' do
   @round = Round.find(params[:round_id])
   
   if @round.over?
-    session[:result].clear
+    session[:result] = nil
     redirect "/rounds/#{@round.id}/results"
   end
 
