@@ -8,7 +8,7 @@
     <a class="navbar" href='/decks/show_all'>DOSSIER</a>
 	<% else %>
 		<a href="/login" id="loginButt">LOGIN</a>
-		<a class="navbar" href="/users/new">ENLIST WITH MI6</a>
+		<a class="navbar" id="signinButt" href="/users/new">ENLIST WITH MI6</a>
 	<% end %>
 </nav>
 <div align="center">
@@ -37,8 +37,7 @@
 
 <!-- HIDDEN FORM  -->
 
-<div class="hide form">
-	<form action="/signup" method="post">
+<form class="hide form" id="signupForm" action="/signup" method="post">
 
 	<h3>Create an account!</h3>
 
@@ -46,11 +45,11 @@
 	  <div class="errors"><%= flash[:signup_errors] %></div>
 	<% end %>
 
-	  <input type="text" name="name" placeholder="name"><br>
-	  <input type="text" name="email" placeholder="email"><br>
-	  <input type="password" name="password" placeholder="password"><br>
-	  <input type="submit" value="Signup!">
-	</form>
-</div>
+  <input type="text" name="name" placeholder="name"><br>
+  <input type="text" name="email" placeholder="email"><br>
+  <input type="password" name="password" placeholder="password"><br>
+  <input type="submit" value="Signup!">
+</form>
+
 
 
