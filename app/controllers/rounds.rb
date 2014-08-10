@@ -33,7 +33,7 @@ end
 
 get '/rounds/:round_id/results' do
 
-  @round = Round.find(session[:round_id])
+  @round = Round.find(params[:round_id])
   @guesses = Guess.where(round_id: @round.id)
   @correct_guesses = @guesses.select {|guess| guess.correct? }
 
