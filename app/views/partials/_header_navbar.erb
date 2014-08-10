@@ -1,16 +1,15 @@
-<h1>GOLDFINGER</h1>
-
 <nav>
-  <a href="/"><button>HOME</button></a>
+  <a href="/">VAUXHALL CROSS</a>
 
   <% if session[:user_id] %>
-		<form action="/logout" method="POST"><input type="submit" value="Log Out"></form>
-		<a href="/users/<%= session[:user_id]%>/results"></a><button> Personal Stats</button>
+		<form action="/logout" method="POST">
+      <input type="submit" class="linkbutton" value="Logout"></form>
+		<a href="/users/<%= session[:user_id]%>/results">Personal Stats</a>
     <br>
-    <a href='/decks/show_all'><button>See All Decks</button></a>
+    <a href='/decks/show_all'>See All Decks</a>
 	<% else %>
 		<button>LOGIN</button>
-		<a href="/users/new"><button>Create an account!</button></a>
+		<a href="/users/new">Create an account!</a>
 	<% end %>
 </nav>
 

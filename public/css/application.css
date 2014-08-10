@@ -4,25 +4,52 @@
   padding: 0px 20px 20px 20px;
   border: 1px dotted black;
 }
+
+.head{
+  text-align: center;
+  font-family: 'Domine', serif;
+}
+
+.head h1{
+  font-size: 4em;
+  letter-spacing: 16px;
+}
+
+.starring{
+  font-family: 'Open Sans Condensed', sans-serif;
+  text-align: center;
+}
+
+.navigation{
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
 th {
   text-align: left;
 }
 
-h1 {
-  text-align: center;
-  font-size: 4em;
-  font-family: Georgia;
-  letter-spacing: 8px;
-  background: -webkit-gradient(
-    linear,
-    left top, left bottom,
-    from(#CCCC00),
-    to(#FFFF19)
-    );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+a:link {
+  text-decoration: none;
+  color: grey;
 }
 
-body {
-  background-image: -webkit-linear-gradient(right, #1a1a1a, #4C4C4C);
+a:visited {
+  color:grey;
+}
+
+a:hover{
+  color: #FFFFFF;
+}
+
+.linkbutton {
+  background:none;
+  border:none;
+  padding:0;
+  cursor: pointer;
+  color: grey;
+}
+
+.linkbutton:hover{
+  color: #FFFFFF;
 }

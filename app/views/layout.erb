@@ -7,6 +7,9 @@
     See: http://necolas.github.com/normalize.css/
   -->
   <link rel="stylesheet" href="/css/normalize.css">
+  <link href='http://fonts.googleapis.com/css?family=Domine' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
   <!--
     application.css is where you put your styles
   -->
@@ -18,9 +21,19 @@
   <title></title>
 </head>
 <body>
-  <div class="container">
+  <div class="starring">
+    <%= erb :"partials/_starring" %>
+  </div>
 
+  <div class="head">
+    <%= erb :"partials/_goldfinger" %>
+  </div>
+
+  <div class="navigation">
     <%= erb :"partials/_header_navbar" %>
+  </div>
+
+  <div class="container">
     <%= yield %>
   </div>
 
