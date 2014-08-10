@@ -1,0 +1,19 @@
+<h2>Special Agent <%= @user.name %></h2>
+
+<!-- referenced as decks - this should be a partial eventually, that can be used both here on the user profile, and within the show_all to diplay all decks -->
+
+<% if @decks %>
+	
+<!-- 	<table> -->
+	<% @decks.each do |deck| %>
+		<%= deck.name %>
+	<%end%>
+<!-- 	</table> -->
+
+<% end %>
+
+
+<% if @rounds %>
+
+
+<% end %>
