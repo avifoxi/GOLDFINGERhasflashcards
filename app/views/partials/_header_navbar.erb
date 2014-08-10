@@ -1,15 +1,14 @@
 <nav>
-  <a href="/">VAUXHALL CROSS</a>
+  <a class="navbar" href="/">VAUXHALL CROSS</a>
 
   <% if session[:user_id] %>
-		<form action="/logout" method="POST">
-      <input type="submit" class="linkbutton" value="Logout"></form>
-		<a href="/users/<%= session[:user_id]%>/results">Personal Stats</a>
-    <br>
-    <a href='/decks/show_all'>See All Decks</a>
+		<form class="navbar" action="/logout" method="POST">
+      <input type="submit" class="linkbutton" value="LOGOUT"></form>
+		<a class="navbar" href="/users/<%= session[:user_id]%>/results">PERSONAL STATS</a>
+    <a class="navbar" href='/decks/show_all'>SEE ALL DECKS</a>
 	<% else %>
 		<button>LOGIN</button>
-		<a href="/users/new">Create an account!</a>
+		<a class="navbar" href="/users/new">CREATE AN ACCOUNT</a>
 	<% end %>
 </nav>
 
