@@ -1,4 +1,4 @@
-<nav>
+<nav id="nav">
   <a class="navbar" href="/">VAUXHALL CROSS</a>
 
   <% if session[:user_id] %>
@@ -10,7 +10,8 @@
 		<a href="/login" id="loginButt">LOGIN</a>
 		<a class="navbar" id="signinButt" href="/users/new">ENLIST WITH MI6</a>
 	<% end %>
-</nav>
+
+
 <div align="center">
 <div class="header_line"></div>
 </div>
@@ -29,6 +30,7 @@
   <input type="text" name="email" placeholder="email">
   <br><input type="password" name="password" placeholder="password">
   <br><input type="submit" value="MISSION START">
+  <button class="away">NOT NOW</button>
 </form>
 
 
@@ -49,7 +51,8 @@
   <input type="text" name="email" placeholder="email"><br>
   <input type="password" name="password" placeholder="password"><br>
   <input type="submit" value="Signup!">
+  <button class="away">NOT NOW</button>
 </form>
 
-
+</nav>
 

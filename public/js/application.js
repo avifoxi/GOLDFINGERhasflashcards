@@ -7,6 +7,12 @@ $(document).ready(function() {
 	  });
 	});
 
+	$(".away").click(function(event){
+		event.preventDefault();
+		$("form").fadeOut( "slow", function() {
+	  });
+	})
+
 	$("form#loginForm").submit(function(event){
 		event.preventDefault();
         //send an ajax request to our action
@@ -16,11 +22,14 @@ $(document).ready(function() {
       //serialize the form and use it as data for our ajax request
       data: $(this).serialize(),
       //the type of data we are expecting back from server, could be json too
-      dataType: "json",
+      dataType: "html",
       success: function(data) {
         //if our ajax request is successful, replace the content of our viz div with the response data
-        $('nav').fadeIn('fast');
+        
         console.log(data);
+        $('#nav').replaceWith(data);
+        // $();
+        
       }
     });
  
