@@ -26,4 +26,30 @@ class User < ActiveRecord::Base
     @user.password = params[:password]
     @user.save!
   end
+
+    # def leaderboard(num = 3)
+  #   @leaderboard = []
+  #   leaders = get_leaders
+  #   num.times do
+  #     @leaderboard << leaders.shift
+  #   end
+  #   @leaderboard
+  # end
+
+  # def get_leaders
+  #   get_results.sort! (|k| k([:guesses].where(correct: true).length.to_f/[:guesses].length))
+  # end
+
+  def get_results
+    find_results(self)
+  end
+
+  def self.get_results
+    User.all.map { |user| find_results(user) }
+  end
+
+  def find_results(user)
+    user.rounds.map { |round| {round: round.id, user: round.user.name, deck: round.deck.name, guesses: round.guesses} }
+  end
+
 end
