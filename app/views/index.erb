@@ -8,9 +8,9 @@
 
 <h2>Hall of Fame</h2>
 
-<ol>
-<% User.leaderboard.each do |leader| %>
-  <li><%= leader[:user] %> Round <%= leader[:round] %>, <%= leader[:deck] %>, Score: <%= leader[:score] %></li>
+<ul>
+<% Round.leaders.each do |leader| %>
+  <li><%= leader.user.name %>, Round <%= leader.id %>, <%= leader.deck.name %>, Score: <%= leader.score %></li>
  <% end %>
-</ol>
+</ul>
 

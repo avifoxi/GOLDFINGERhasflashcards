@@ -16,4 +16,12 @@ class Round < ActiveRecord::Base
     Card.find(@card_list.shuffle!.pop) unless over?
   end
 
+  def score
+    (guesses.where(correct: true).length * 50 - guesses.where(correct: false).length * 75)
+  end
+
+  def self.leaders(num = 3)
+    Round.all.map.sort {|a, b| b.score <=> a.score }[0..num-1]
+  end
+
 end
