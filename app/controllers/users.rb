@@ -1,8 +1,5 @@
 
 get '/' do
- puts "homepage with welcome and either:"
- puts "(1) login/sign up options or "
- puts "(2) start new round option if you are logged in"
  erb :'index'
 end
 
@@ -33,6 +30,24 @@ post '/logout' do
   redirect '/'
 end
 
-get '/users/:id/results' do
-  puts "display all results"
+### USER PROFILE PAGE // MISSION DEBRIEFINGS
+
+get '/users/:user_id' do
+  @user = User.find(params[:user_id])
+  @decks = @user.authored_decks
+  @rounds = @user.rounds
+
+  erb :"users/profile"
 end
+
+
+## USERS DISPLAY PAGE // 00_ AGENTS
+
+
+
+
+
+
+
+
+

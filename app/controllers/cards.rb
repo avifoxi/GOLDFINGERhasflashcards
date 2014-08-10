@@ -1,9 +1,12 @@
+## GET REQUEST FOR NEW CARD FORM 
+
 get "/decks/:deck_id/card/new" do
   @deck = Deck.find(params[:deck_id])
   erb :"decks/cards/new"
 
 end
 
+## CREATE NEW CARD
 post "/decks/:deck_id/cards/create" do
 	@card = Card.new(params[:card])
 	@deck = Deck.find(params[:deck_id])
@@ -17,11 +20,15 @@ post "/decks/:deck_id/cards/create" do
 	end
 end
 
+## GET EDIT FORM 
+
 get '/decks/:deck_id/cards/:card_id/edit' do
  	@card = Card.find(params[:card_id])
 	@deck = Deck.find(params[:deck_id])
 	erb :"decks/cards/edit"
 end
+
+## EDIT  
 
 patch '/decks/:deck_id/cards/:card_id/edit' do
 	@deck = Deck.find(params[:deck_id])
@@ -36,8 +43,10 @@ patch '/decks/:deck_id/cards/:card_id/edit' do
  
  	if @card.update_attributes(params[:card])
  		@deck.cards << @card
+ 		session[:error] = nil
  		redirect "/decks/#{@deck.id}"
  	else 
+ 		session[:error] = 'edit failure'
  		erb :"decks/cards/edit"
  	end
 

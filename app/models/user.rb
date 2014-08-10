@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   has_many :rounds
   has_many :guesses, through: :rounds
   has_many :played_decks, through: :rounds, source: :deck
-  has_many :authored_decks, class_name: 'Deck'
+  has_many :authored_decks, class_name: 'Deck', foreign_key: :author_id
 
   include BCrypt
 
