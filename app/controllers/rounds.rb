@@ -38,7 +38,7 @@ get '/rounds/:round_id/results' do
   
   @guesses = @round.guesses
   
-  @correct_guesses = @guesses.select {|guess| guess.correct == true }
+  @correct_guesses = @guesses.select {|guess| guess.correct? == true }
 
   erb :'/decks/rounds/results'
 end
