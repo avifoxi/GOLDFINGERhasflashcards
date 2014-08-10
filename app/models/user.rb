@@ -41,15 +41,15 @@ class User < ActiveRecord::Base
   # end
 
   def get_results
-    find_results(self)
+    find_results
   end
 
   def self.get_results
-    User.all.map { |user| find_results(user) }
+    User.all.map { |user| user.find_results }
   end
 
-  def find_results(user)
-    user.rounds.map { |round| {round: round.id, user: round.user.name, deck: round.deck.name, guesses: round.guesses} }
+  def find_results
+    self.rounds.map { |round| {round: round.id, user: round.user.name, deck: round.deck.name, guesses: round.guesses} }
   end
 
 end
