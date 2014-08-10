@@ -1,39 +1,3 @@
 <h2>Would you like to play a game?</h2>
 
 
-<!-- HIDDEN FORM  -->
-
-<form class="hide form" id="loginForm" action="/login" method="post">
-	
-	<h3> Sign in to play!</h3>
-
-	<% if flash[:signin_errors] %>
-	  <div class="errors"><%= flash[:signin_errors] %></div>
-	<% end %>
-	
-  <input type="text" name="email" placeholder="email">
-  <br><input type="password" name="password" placeholder="password">
-  <br><input type="submit" value="MISSION START">
-</form>
-
-
-<!-- <br><hr>
- -->
-
-<!-- HIDDEN FORM  -->
-
-<div class="hide form">
-	<form action="/signup" method="post">
-
-	<h3>Create an account!</h3>
-
-	<% if flash[:signup_errors] %>
-	  <div class="errors"><%= flash[:signup_errors] %></div>
-	<% end %>
-
-	  <input type="text" name="name" placeholder="name"><br>
-	  <input type="text" name="email" placeholder="email"><br>
-	  <input type="password" name="password" placeholder="password"><br>
-	  <input type="submit" value="Signup!">
-	</form>
-</div>

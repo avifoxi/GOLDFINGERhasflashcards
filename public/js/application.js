@@ -7,4 +7,11 @@ $(document).ready(function() {
 	  });
 	});
 
+	$("form#loginForm").submit(function(event){
+		event.preventDefault();
+		$("form#loginForm").fadeOut( "slow", function() {
+			
+	  });
+	})	
+
 });
