@@ -25,8 +25,9 @@ post '/login' do
     session[:user_id] = @user.id
     
     if request.xhr?
-      content_type :json
-      return (erb :"partials/_header_navbar")
+      # content_type :json
+
+      erb :"partials/_header_navbar", :layout => !request.xhr?
     else
       redirect '/decks/show_all'
     end
