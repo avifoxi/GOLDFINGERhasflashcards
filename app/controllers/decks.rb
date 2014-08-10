@@ -13,6 +13,8 @@ post '/decks/:deck_id/round/create' do
 end
 
 get '/decks/new' do
+  # if session[:user_id] direct to NEW form
+  # else say - sorry bub, gotta be logged in   
 
   erb :"/decks/new"
 end
@@ -20,21 +22,18 @@ end
 post '/decks/create' do
   # @user = User.find(session[:user_id])
   @deck = Deck.create(params[:deck])
-  # @user.decks << @deck
+  # @user.authored_decks << @deck
 
   redirect "/decks/#{@deck.id}"
 end
 
 get '/decks/:deck_id' do
   @deck = Deck.find(params[:deck_id])
-  @cards = @deck.cards ||= Card.new(question: 'What will your first card be?')
+  @cards = @deck.cards ||= [Card.new(question: 'What will the first card be?')]
   erb :"decks/show_one"
 
 end
 
-get "/decks/:deck_id/card/new" do
 
-
-end
 
 

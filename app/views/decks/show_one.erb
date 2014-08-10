@@ -1,1 +1,25 @@
-<h2><%= @deck.name %></h2>
+<h2>Deck Name:<%= @deck.name %></h2>
+
+<% if @cards %>
+	<h3>Cards In <%= @deck.name %></h3>
+	
+	<table>
+		<tr>
+			<th>Questions</th>
+			<th>Answers</th>
+		</tr>
+		<% @cards.each do |card| %>
+			<tr>
+				<td><%= card.question %></td>
+				<td><%= card.answer %></td>
+			</tr>
+
+		<%end%>
+	</table>
+
+<% else %>
+	<h3>This Deck Needs Some Cards Pronto!</h3>
+
+<% end %>
+
+<a href="/decks/<%= @deck.id %>/card/new"><button>Add a Card To This Deck</button></a>
