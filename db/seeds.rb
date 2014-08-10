@@ -52,7 +52,7 @@ end
 
 bond_array = [
   {question: "Who was this golden gun-bearing villain?", answer: "Francisco Scaramanga"},
-  {question: "What Bond villain concealed a deadly weapon in her high heels?", answer: "Rosa Klebb"},
+  {question: "What Bond villain concealed a deadly weapon in her shoes?", answer: "Rosa Klebb"},
   {question: "What is the title of the first James Bond film?", answer: "Dr No"},
   {question: "In which Bond movie does the villain Kanaga appear?", answer: "Live and Let Die"},
   {question: "In 007, the double 0 means Bond has a license to what?", answer: "kill"},
@@ -62,7 +62,7 @@ bond_array = [
   {question: "The following quote appears in which Bond movie: 'Choose your next wittisism carefully Mr. Bond, it may be your last!'", answer: "Goldfinger"},
   {question: "What is this villain's last name? ", answer: "Blofeld"},
   {question: "Major Boothroyd is better known as who?", answer: "Q"},
-  {question: "What author created James Bond?", answer: "Ian Flemming"},
+  {question: "What author created James Bond?", answer: "Ian Fleming"},
   {question: "Who was this James Bond actor?", answer: "Roger Moore"},
   {question: "In which James Bond movie do Bond's arsenal of gadgets include an underwater breathing apparatus, a geiger counter hidden in a watch, and the famous jetpack?", answer: "Thunderball"},
   {question: "What secret service agency does 007 work for?", answer: "mi6"},
@@ -79,7 +79,7 @@ image_array = [
   "/img/bond_quiz/connery.jpg",
   "/img/bond_quiz/goldfinger.jpg",
   "/img/bond_quiz/ernst.jpg",
-  "/img/bond_quiz/major.jpg",
+  "/img/bond_quiz/major.png",
   "/img/bond_quiz/author.jpg",
   "/img/bond_quiz/moore.gif",
   "/img/bond_quiz/gadgets.jpg"
