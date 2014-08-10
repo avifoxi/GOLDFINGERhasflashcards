@@ -5,20 +5,26 @@
 <% if @decks %>
 	<h3>Authored Missions</h3>
 
-<!-- 	<table> -->
+	<ol>
 	<% @decks.each do |deck| %>
-		<%= deck.name %>
+		<li><%= deck.name %>. Used in <%=deck.rounds.count%> Rounds!</li>
 	<%end%>
-<!-- 	</table> -->
-
+	</ol>
+	
+<% else %>
+	<h3>No Authored Missions Yet.</h3>
+	<% if @user.id == session[:user_id]%>
+		<a href="/decks/new"><button>Author a New Mission!</button></a>
+	<%end%>
 <% end %>
 
 
 <% if @rounds %>
 	<h3>Completed Missions</h3>
+	<h4>Click for Results Page</h4>
 	<ol>
 		<% @rounds.each do |round| %>
-			<li><%= round.deck.name %></li>
+			<li><a href="/rounds/<%= round.id %>/results"><%= round.deck.name %></a></li>
 		<%end%>
 	</ol>
 
