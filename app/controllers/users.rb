@@ -19,10 +19,17 @@ get '/login' do
 end
 
 post '/login' do
+  p params
   @user = User.find_by_email(params[:email])
   if @user && @user.password == params[:password]
     session[:user_id] = @user.id
-    redirect '/decks/show_all'
+    
+    if request.xhr?
+      content_type :json
+      return session[:user_id].to_json
+    else
+      redirect '/decks/show_all'
+    end
   else
     flash[:signin_errors] = 'Invalid Login'
     redirect '/'
