@@ -27,7 +27,8 @@ $(document).ready(function() {
         //if our ajax request is successful, replace the content of our viz div with the response data
         
         console.log(data);
-        $('#nav').replaceWith(data);
+        $('#nav').remove();
+        $('navigation').append(data);
         // $();
         
       }
