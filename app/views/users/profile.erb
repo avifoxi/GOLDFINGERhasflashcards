@@ -3,7 +3,8 @@
 <!-- referenced as decks - this should be a partial eventually, that can be used both here on the user profile, and within the show_all to diplay all decks -->
 
 <% if @decks %>
-	
+	<h3>Authored Missions</h3>
+
 <!-- 	<table> -->
 	<% @decks.each do |deck| %>
 		<%= deck.name %>
@@ -14,6 +15,11 @@
 
 
 <% if @rounds %>
-
+	<h3>Completed Missions</h3>
+	<ol>
+		<% @rounds.each do |round| %>
+			<li><%= round.deck.name %></li>
+		<%end%>
+	</ol>
 
 <% end %>
