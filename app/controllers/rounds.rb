@@ -1,8 +1,20 @@
-get '/decks/rounds/play' do
+post '/decks/:deck_id/round/create' do
+
+  unless session[:user_id] 
+    redirect '/'
+  end
+
+  @user = User.find(session[:id])
+  @deck = Deck.find(params[:deck_id])
+  @round = @user.rounds.create(deck: @deck )
+
+  redirect "/decks/#{@deck.id}/rounds/#{@round.id}/play"
+end
+
+get '/decks/:deck_id/rounds/:round_id/play' do
 
   @round = Round.find(session[:round_id])
   @card = @round.next_card
-  @guess = Guess.create(round_id: @round.id, card_id: @card.id, user_input: "need input")
   session[:guess_id] = @guess.id
 
   erb :'/decks/rounds/play'
