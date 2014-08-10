@@ -7,7 +7,11 @@ post '/signup' do
   @user = User.create(name: params[:name], email: params[:email], password: params[:password])
   if @user.valid?
     session[:user_id] = @user.id
-    redirect '/decks/show_all'
+    if request.xhr?
+      erb :"partials/_header_navbar", :layout => !request.xhr?
+    else
+      redirect '/decks/show_all'
+    end
   else
     flash[:signup_errors] = form_error(@user.errors.messages)
     redirect '/'

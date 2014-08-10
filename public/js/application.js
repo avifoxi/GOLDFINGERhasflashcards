@@ -34,10 +34,7 @@ $(document).ready(function() {
         
       }
     });
- 
-		$("form#loginForm").fadeOut( "slow", function() {
 
-	  });
 	})
 
 	$("#signinButt").click(function(event){
@@ -48,6 +45,25 @@ $(document).ready(function() {
 
 	$("form#signupForm").submit(function(event){
 		event.preventDefault();
+		$.ajax({
+      url: "/signup",
+      type: "POST",
+      //serialize the form and use it as data for our ajax request
+      data: $(this).serialize(),
+      //the type of data we are expecting back from server, could be json too
+      dataType: "html",
+      success: function(data) {
+        //if our ajax request is successful, replace the content of our viz div with the response data
+        
+        console.log(data);
+        
+        $('.navigation').html(data);
+        // $('#nav').remove();
+        // $();
+        
+      },
+    });
+
 		$("form#signupForm").fadeOut( "slow", function() {
 			
 	  });
