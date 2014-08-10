@@ -1,3 +1,4 @@
+
 get '/' do
  puts "homepage with welcome and either:"
  puts "(1) login/sign up options or "
@@ -11,24 +12,25 @@ post '/signup' do
     session[:user_id] = @user.id
     redirect '/decks/show_all'
   else
-    @errors = @user.errors
-    erb :'index'
+    flash[:signup_errors] = form_error(@user.errors.messages)
+    redirect '/'
   end
 end
 
 post '/login' do
   @user = User.find_by_email(params[:email])
-  if @user.password == params[:password]
+  if @user && @user.password == params[:password]
     session[:user_id] = @user.id
     redirect '/decks/show_all'
   else
-    erb :'index'
+    flash[:signin_errors] = 'Invalid Login'
+    redirect '/'
   end
 end
 
 post '/logout' do
-  puts "button that you press that'll delete the session id"
-  puts "will also redirect to homepage"
+  session.clear
+  redirect '/'
 end
 
 get '/users/:id/results' do

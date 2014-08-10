@@ -29,6 +29,7 @@ th {
   text-align: left;
 }
 
+
 a:link {
   text-decoration: none;
   color: grey;
@@ -57,4 +58,7 @@ a:hover{
 .navbar{
   display: inline-block;
   margin: 1em;
+
+.errors {
+  color:red;
 }
