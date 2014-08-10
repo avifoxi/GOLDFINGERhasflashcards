@@ -24,3 +24,12 @@
   <input type="password" name="password" placeholder="password"><br>
   <input type="submit" value="Signup!">
 </form>
+
+<h2>Hall of Fame</h2>
+
+<ol>
+<% User.leaderboard.each do |leader| %>
+  <li><%= leader[:user] %> Round <%= leader[:round] %>, <%= leader[:deck] %>, Score: <%= leader[:score] %></li>
+ <% end %>
+</ol>
+
