@@ -20,9 +20,9 @@ get '/decks/new' do
 end
 
 post '/decks/create' do
-  # @user = User.find(session[:user_id])
+  @user = User.find(session[:user_id])
   @deck = Deck.create(params[:deck])
-  # @user.authored_decks << @deck
+  @user.authored_decks << @deck
 
   redirect "/decks/#{@deck.id}"
 end
