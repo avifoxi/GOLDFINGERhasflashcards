@@ -21,6 +21,8 @@ gem 'bcrypt-ruby'
 gem 'shotgun'
 gem 'faker'
 
+gem 'sinatra-flash'
+
 group :test do
   gem 'rspec'
 end
