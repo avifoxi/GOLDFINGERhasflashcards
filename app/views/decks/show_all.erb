@@ -7,9 +7,9 @@
     <option value=<%= deck.id %> ><%= deck.name %></option>
   <% end %>
   </select>
-  <input type="submit" value="Click">
+  <input type="submit" class="index_button" value="Click">
 </form>
-
+<br>
 <% if session[:user_id] %>
-	<a href="/decks/new"><button>Wanna Make a New Deck?</button></a>
+	<a href="/decks/new"><button class="index_button">Wanna Make a New Deck?</button></a>
 <% end %>

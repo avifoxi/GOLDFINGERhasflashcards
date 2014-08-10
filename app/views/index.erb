@@ -3,9 +3,9 @@
   <source src="James Bond.mp3" type="audio/mpeg">
 </audio>
 
-<h2>Would you like to play a game?</h2>
+<h2>READY FOR YOUR NEXT MISSION?</h2>
 
-<h3> Sign in to play!</h3>
+<h3>Submit 'License to Kill'</h3>
 
 <% if flash[:signin_errors] %>
   <div class="errors"><%= flash[:signin_errors] %></div>
@@ -14,11 +14,11 @@
 <form action="/login" method="post">
   <input type="text" name="email" placeholder="email">
   <input type="password" name="password" placeholder="password">
-  <input type="submit" value="MISSION START">
+  <input type="submit" class="index_button" value="MISSION START">
 </form>
 <br><hr>
 
-<h3>Create an account!</h3>
+<h3>Join MI6</h3>
 
 <% if flash[:signup_errors] %>
   <div class="errors"><%= flash[:signup_errors] %></div>
@@ -27,5 +27,5 @@
   <input type="text" name="name" placeholder="name"><br>
   <input type="text" name="email" placeholder="email"><br>
   <input type="password" name="password" placeholder="password"><br>
-  <input type="submit" value="Signup!">
+  <input type="submit" class="index_button" value="Signup!">
 </form>
