@@ -1,9 +1,0 @@
-<h2>Hall of Fame</h2>
-
-<!-- referenced as decks - this should be a partial eventually, that can be used both here on the user profile, and within the show_all to diplay all decks -->
-<ol>
-<% User.leaderboard.each_with_index do |leader, i| %>
-  <li><%= i + 1 %> <%= leader.user %> Round <%= leader.round %>, <%= leader.deck %>, SCORE: <%= leader.score %></li>
- <% end %>
-</ol>
-
