@@ -7,18 +7,34 @@ post '/signup' do
   @user = User.create(name: params[:name], email: params[:email], password: params[:password])
   if @user.valid?
     session[:user_id] = @user.id
-    redirect '/decks/show_all'
+    if request.xhr?
+      erb :"partials/_header_navbar", :layout => !request.xhr?
+    else
+      redirect '/decks/show_all'
+    end
   else
     flash[:signup_errors] = form_error(@user.errors.messages)
     redirect '/'
   end
 end
 
+get '/login' do 
+  erb :"users/login"
+end
+
 post '/login' do
+  p params
   @user = User.find_by_email(params[:email])
   if @user && @user.password == params[:password]
     session[:user_id] = @user.id
-    redirect '/decks/show_all'
+    
+    if request.xhr?
+      # content_type :json
+
+      erb :"partials/_header_navbar", :layout => !request.xhr?
+    else
+      redirect '/decks/show_all'
+    end
   else
     flash[:signin_errors] = 'Invalid Login'
     redirect '/'

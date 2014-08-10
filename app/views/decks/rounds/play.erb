@@ -2,14 +2,18 @@
 
 <h3>You are playing with the <%= @round.deck.name %> deck. Have fun!</h3>
 
+<% if session[:result] %>
+  <div class="result">Your answer was <%= session[:result] %></div>
+<% end %>
+
 <p>Your question is:</p>
-<p class="question"><%= @card.question %></p>
+<br>
+<% if @card.image %>
+  <p><img src="<%=@card.image.url%>"></p>
+<% end %>
+<p><%= @card.question %></p>
 
 <form action="/rounds/<%= @round.id%>/card/<%= @card.id %>/guess" method="POST">
   <input type="text" name="guess[user_input]" placeholder="your answer goes here">
   <input type="submit" value="Click">
 </form>
-<br>
-<% if session[:result] %>
-  <div class="result">Your answer was <%= session[:result] %></div>
-<% end %>
