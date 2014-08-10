@@ -5,21 +5,30 @@
   border: 1px dotted black;
 }
 
-body {background-color: #313030;
-
+body {
+  background-color: #313030;
 }
 
-.head{
+.head {
   text-align: center;
   font-family: 'Domine', serif;
 }
 
-.head h1{
-  font-size: 4em;
+.head h1 {
+  font-size: 5em;
   letter-spacing: 24px;
-  background: -webkit-linear-gradient(#FFD700, #b29600);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  text-shadow: 1px 1px 1px #e5c100,
+  2px 2px 2px #e5c100,
+  2px 2px 2px #e5c100,
+  2px 2px 2px #e5c100,
+  2px 2px 2px #e5c100,
+  2px 2px 2px #e5c100,
+  3px 3px 5px #FFD700,
+  3px 3px 5px #FFD700,
+  3px 3px 5px #FFD700,
+  3px 3px 5px #FFD700,
+  3px 3px 5px #FFD700,
+  3px 3px 5px #FFD700;
 }
 
 .starring{
@@ -27,24 +36,27 @@ body {background-color: #313030;
   text-align: center;
   letter-spacing: .2em;
   color: #F8F8F8;
+  text-shadow: 2px 2px 2px #FFD700, 1px 1px 1px #b29600;
 }
 
-span { color: #FFD700;
-
+span {
+  color: #FFD700;
+  text-shadow: 2px 2px 2px #000000, 1px 1px 1px #000000;
 }
 
 .navigation{
   text-align: center;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Open Sans Condensed', sans-serif;
+  letter-spacing: .2em;
+  text-shadow: 1px 1px 1px #FFD700,.5px.5px .5px #b29600;
 }
 
 .header_line {
-height:1px;
-background:#b29600;
-border-bottom:1px solid #313030;
-width: 60%;
-margin-top: 2%;
-
+  height:1px;
+  background:#b29600;
+  border-bottom:1px solid #313030;
+  width: 60%;
+  margin-top: 2%;
 }
 
 th {
@@ -57,11 +69,11 @@ a:link {
 }
 
 a:visited {
-  color:grey;
+  color:#F8F8F8;
 }
 
 a:hover{
-  color: #FFFFFF;
+  color: #FFD700;
 }
 
 .linkbutton {
@@ -69,11 +81,17 @@ a:hover{
   border:none;
   padding:0;
   cursor: pointer;
-  color: grey;
+  color: white;
+  text-shadow: 1px 1px 1px #FFD700,.5px.5px .5px #b29600;
+  letter-spacing: .2em;
 }
 
 .linkbutton:hover{
-  color: #FFFFFF;
+  color: #FFD700;
+}
+
+.linkbutton:visited{
+  color: #FFD700;
 }
 
 .navbar{
