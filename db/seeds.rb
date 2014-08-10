@@ -65,6 +65,7 @@ bond_array = [
   {question: "What author created James Bond?", answer: "Ian Fleming"},
   {question: "Who was this James Bond actor?", answer: "Roger Moore"},
   {question: "In which James Bond movie do Bond's arsenal of gadgets include an underwater breathing apparatus, a geiger counter hidden in a watch, and the famous jetpack?", answer: "Thunderball"},
+  {question: "Who was this villain who had the famous line 'No Mr Bond, I expect you to die!'", answer: "Goldfinger"},
   {question: "What secret service agency does 007 work for?", answer: "mi6"},
   {question: "In which movie does James Bond become legally married?", answer: "You Only Live Twice"}
 ]
@@ -82,7 +83,8 @@ image_array = [
   "/img/bond_quiz/major.png",
   "/img/bond_quiz/author.jpg",
   "/img/bond_quiz/moore.gif",
-  "/img/bond_quiz/gadgets.jpg"
+  "/img/bond_quiz/gadgets.jpg",
+  "/img/bond_quiz/gf_thumb.jpg"
 ]
 
 bond_array.each_with_index do |row, index|
