@@ -1,8 +1,13 @@
 <h2>Hall of Fame</h2>
 
 <!-- referenced as decks - this should be a partial eventually, that can be used both here on the user profile, and within the show_all to diplay all decks -->
-
-<%= @User.last.get_results %>
+<ol>
+<% User.leaderboard do |leader| %>
+  <li><%= leader.name %>
+<%= %>
+<%= %>
+<%= %>
+<%= %>
 
 <h2>Game Over! Here are your results!</h2>
 
