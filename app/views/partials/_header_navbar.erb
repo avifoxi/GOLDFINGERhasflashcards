@@ -1,17 +1,15 @@
-<h2>Goldfinger FlashcardDance:</h2>
-<h3>what a feeling.</h3>
-
 <nav>
+  <a class="navbar" href="/">VAUXHALL CROSS</a>
 
-	<% if session[:user_id] %>
-		<form action="/logout" method="POST"><input type="submit" value="Log Out"></form>
-		<a href="/users/<%= session[:user_id]%>/results"></a><button> Go to Profile Page with your personal stats</button>
+  <% if session[:user_id] %>
+		<form class="navbar" action="/logout" method="POST">
+      <input type="submit" class="linkbutton" value="LOGOUT"></form>
+		<a class="navbar" href="/users/<%= session[:user_id]%>/results">PERSONAL STATS</a>
+    <a class="navbar" href='/decks/show_all'>SEE ALL DECKS</a>
 	<% else %>
 		<button>LOGIN</button>
-		<a href="/users/new"><button>SIGNUP if you're not signed up</button></a>
+		<a class="navbar" href="/users/new">CREATE AN ACCOUNT</a>
 	<% end %>
-
-	<a href="/"><button>HOME</button></a>
-	<a href='/decks/show_all'><button>See All Decks</button></a>
 </nav>
+
 <br><hr><br>
