@@ -1,4 +1,4 @@
-<nav>
+<nav id="nav">
   <a class="navbar" href="/">VAUXHALL CROSS</a>
 
   <% if session[:user_id] %>
@@ -7,10 +7,54 @@
 		<a class="navbar" href="/users/<%= session[:user_id]%>">MISSION DEBRIEFINGS</a>
     <a class="navbar" href='/decks/show_all'>DOSSIER</a>
 	<% else %>
-		<a class="navbar" href="/users/new">ENLIST WITH MI6</a>
+
+		<a href="/login" id="loginButt">LOGIN</a>
+		<a class="navbar" id="signinButt" href="/users/new">ENLIST WITH MI6</a>
+
 	<% end %>
-</nav>
+
+
 <div align="center">
 <div class="header_line"></div>
 </div>
+
+
+<!-- HIDDEN FORM  -->
+
+<form class="hide form" id="loginForm" action="/login" method="post">
+	
+	<h3> Sign in to play!</h3>
+
+	<% if flash[:signin_errors] %>
+	  <div class="errors"><%= flash[:signin_errors] %></div>
+	<% end %>
+	
+  <input type="text" name="email" placeholder="email">
+  <br><input type="password" name="password" placeholder="password">
+  <br><input type="submit" value="MISSION START">
+  <button class="away">NOT NOW</button>
+</form>
+
+
+<!-- <br><hr>
+ -->
+
+<!-- HIDDEN FORM  -->
+
+<form class="hide form" id="signupForm" action="/signup" method="post">
+
+	<h3>Create an account!</h3>
+
+	<% if flash[:signup_errors] %>
+	  <div class="errors"><%= flash[:signup_errors] %></div>
+	<% end %>
+
+  <input type="text" name="name" placeholder="name"><br>
+  <input type="text" name="email" placeholder="email"><br>
+  <input type="password" name="password" placeholder="password"><br>
+  <input type="submit" value="Signup!">
+  <button class="away">NOT NOW</button>
+</form>
+
+</nav>
 
