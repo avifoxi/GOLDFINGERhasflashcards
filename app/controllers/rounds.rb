@@ -1,3 +1,5 @@
+### CREATE NEW ROUND
+
 post '/decks/:deck_id/round/create' do
 
   unless session[:user_id] 
@@ -11,14 +13,19 @@ post '/decks/:deck_id/round/create' do
   redirect "/decks/#{@deck.id}/rounds/#{@round.id}/play"
 end
 
-get '/decks/:deck_id/rounds/:round_id/play' do
+## ROUND IN PLAY
+
+get '/rounds/:round_id/play' do
 
   @round = Round.find(session[:round_id])
+
   @card = @round.next_card
   session[:guess_id] = @guess.id
 
   erb :'/decks/rounds/play'
 end
+
+## USER'S MOST RECENT ROUND RESULTS
 
 get '/decks/rounds/results' do
 
@@ -29,12 +36,3 @@ get '/decks/rounds/results' do
   erb :'/decks/rounds/results'
 end
 
-  # puts <<-TEXT
-  #   display the page youre going to play on
-  #   @round = Round.find(:id)
-  #   if @round.over? <-(we'll have to make this method)
-  #     redirect to users restuls
-  #   else
-  #     @card = @round.next_card <-(we'll have to make this method)
-  #     redirect to 'round/:id'
-  #  TEXT

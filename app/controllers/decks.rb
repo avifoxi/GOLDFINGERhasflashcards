@@ -21,9 +21,8 @@ end
 
 get '/decks/:deck_id' do
   @deck = Deck.find(params[:deck_id])
-  @cards = @deck.cards ||= [Card.new(question: 'What will the first card be?')]
+  @cards = @deck.cards 
   erb :"decks/show_one"
-
 end
 
 
