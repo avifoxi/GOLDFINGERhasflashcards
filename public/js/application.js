@@ -31,7 +31,8 @@ $(document).ready(function() {
         $('.navigation').html(data);
         // $('#nav').remove();
         // $();
-        
+        $('.logged-out').removeClass('show');
+        $('.logged-in').addClass('show');
       }
     });
 
@@ -60,7 +61,8 @@ $(document).ready(function() {
         $('.navigation').html(data);
         // $('#nav').remove();
         // $();
-        
+        $('.logged-out').removeClass('show');
+        $('.logged-in').addClass('show');
       },
     });
 
