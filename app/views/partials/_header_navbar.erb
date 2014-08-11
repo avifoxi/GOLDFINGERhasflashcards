@@ -23,7 +23,7 @@
 
 <form class="hide form" id="loginForm" action="/login" method="post">
 
-	<h3> Sign in to play!</h3>
+	<h3>Authorized agents only...</h3>
 
 	<% if flash[:signin_errors] %>
 	  <div class="errors"><%= flash[:signin_errors] %></div>
@@ -43,7 +43,7 @@
 
 <form class="hide form" id="signupForm" action="/signup" method="post">
 
-	<h3>Create an account!</h3>
+	<h3>Credentails please...</h3>
 
 	<% if flash[:signup_errors] %>
 	  <div class="errors"><%= flash[:signup_errors] %></div>

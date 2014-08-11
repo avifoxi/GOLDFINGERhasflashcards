@@ -3,14 +3,18 @@
   <source src="James Bond.mp3" type="audio/mpeg">
 </audio>
 
-<h2>Would you like to play a game?</h2>
+
+<h2>Welcome to MI6</h2>
+<h3>Are your ready for your next mission?</h3>
 
 
-<h2>Hall of Fame</h2>
 
-<ul>
+<br><br><hr><br>
+
+<h2>Top Agents</h2>
+
+<ul class="top_agents">
 <% Round.leaders.each do |leader| %>
-  <li><%= leader.user.name %>, Round <%= leader.id %>, <%= leader.deck.name %>, Score: <%= leader.score %></li>
+  <li class="leaders"><%= leader.user.name %>, Mission: <%= leader.deck.name %>, Score: <%= leader.score %></li>
  <% end %>
-
 </ul>

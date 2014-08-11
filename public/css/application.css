@@ -8,6 +8,10 @@
   max-width:100%; 
 }
 
+button.btnStyle1 {
+  margin: 5px 0px 5px 0px;
+  padding: 5px;
+}
 
 .container {
   position: relative;
@@ -32,7 +36,17 @@
 
 .container p{
   font-family: 'Open Sans Condensed', sans-serif;
-  font-size: 1em;
+  font-size: 1.15em;
+  letter-spacing: 1.25px;
+}
+
+.container ul{
+  list-style-type: none;
+}
+
+.container li{
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 1.25em;
   letter-spacing: 1.25px;
 }
 
@@ -98,6 +112,7 @@ span {
 .navigation{
   text-align: center;
   font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 1.1em;
   letter-spacing: .2em;
   text-shadow: 1px 1px 1px #FFD700,.5px.5px .5px #b29600;
 }
