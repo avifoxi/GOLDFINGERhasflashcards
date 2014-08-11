@@ -9,7 +9,7 @@
 <p>Your question is:</p>
 <br>
 <% if @card.image %>
-  <p><img src="<%=@card.image.url%>"></p>
+  <div class="card-image"><img src="<%=@card.image.url%>"></div>
 <% end %>
 <p><%= @card.question %></p>
 
