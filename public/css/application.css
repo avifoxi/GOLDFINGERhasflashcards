@@ -4,14 +4,14 @@
   max-width:50%;
 }
 .card-image img {
-  max-height:200px;
+  max-height:150px;
   max-width:100%; 
 }
 
 
 .container {
   position: relative;
-  top: -525px;
+  top: -475px;
   margin: 20px auto;
   width: 70%;
   padding: 0p x 20px 20px 20px;
