@@ -1,3 +1,14 @@
+.card-image {
+  float:left;
+  margin-right:40px;
+  width:30%;
+}
+.card-image img {
+  max-height:175px;
+  max-width:100%; 
+}
+
+
 .container {
   position: relative;
   top: -475px;
@@ -171,6 +182,7 @@ th {
 .errors {
   color:red;
 }
+
 
 /* Media Queries 481px*/
 
