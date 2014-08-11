@@ -4,8 +4,12 @@
   max-width:50%;
 }
 .card-image img {
-  max-height:150px;
+  max-height:190px;
   max-width:100%; 
+}
+
+.welcome {
+  display:none;
 }
 
 button.btnStyle1 {
@@ -32,6 +36,12 @@ button.btnStyle1 {
 .container h3{
   font-family: 'Open Sans Condensed', sans-serif;
   font-size: 1.5em;
+}
+
+.container h3 span {
+  font-size:0.8em;
+  text-shadow:none;
+  color:#000000;
 }
 
 .container p{

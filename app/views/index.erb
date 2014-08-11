@@ -3,10 +3,13 @@
   <source src="James Bond.mp3" type="audio/mpeg">
 </audio>
 
-
+<div class="welcome logged-in <%= 'show' if session[:user_id]%>">
 <h2>Welcome to MI6</h2>
-<h3>Are your ready for your next mission?</h3>
-
+<h3>Are your ready for your next mission? <span>Check your dossier</span></h3>
+</div>
+<div class="welcome logged-out <%= 'show' unless session[:user_id]%>">
+<h2>Please provide your credentials...</h2>
+</div>
 
 
 <br><br><hr><br>
