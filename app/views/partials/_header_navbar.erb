@@ -4,7 +4,7 @@
   <% if session[:user_id] %>
 		<form class="navbar" action="/logout" method="POST">
       <input type="submit" class="linkbutton" value="MISSION ACCOMPLISHED"></form>
-		<a class="navbar" href="/users/<%= session[:user_id]%>">MISSION DEBRIEFINGS</a>
+		<a class="navbar" href="/users/<%= session[:user_id]%>">MISSION STATS</a>
     <a class="navbar" href='/decks/show_all'>DOSSIER</a>
 	<% else %>
 
@@ -22,13 +22,13 @@
 <!-- HIDDEN FORM  -->
 
 <form class="hide form" id="loginForm" action="/login" method="post">
-	
+
 	<h3> Sign in to play!</h3>
 
 	<% if flash[:signin_errors] %>
 	  <div class="errors"><%= flash[:signin_errors] %></div>
 	<% end %>
-	
+
   <input type="text" name="email" placeholder="email">
   <br><input type="password" name="password" placeholder="password">
   <br><input type="submit" value="MISSION START">

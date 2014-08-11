@@ -3,13 +3,13 @@
 <h3>You are playing with the <%= @round.deck.name %> deck. Have fun!</h3>
 
 <% if session[:result] %>
-	<div class="result">Your answer was <%= session[:result] %></div>
+  <div class="result">Your answer was <%= session[:result] %></div>
 <% end %>
 
 <p>Your question is:</p>
 <br>
 <% if @card.image %>
-	<p><img src="<%=@card.image.url%>"></p>
+  <p><img src="<%=@card.image.url%>"></p>
 <% end %>
 <p><%= @card.question %></p>
 
@@ -17,4 +17,3 @@
   <input type="text" name="guess[user_input]" placeholder="your answer goes here">
   <input type="submit" value="Click">
 </form>
-

@@ -22,6 +22,7 @@
   <title></title>
 </head>
 <body>
+
   <div class="starring">
     <%= erb :"partials/_starring" %>
   </div>
@@ -34,9 +35,12 @@
     <%= erb :"partials/_header_navbar" %>
   </div>
 
-  <div class="container">
-    <%= yield %>
-  </div>
+<div class="style">
+  <img src="/film_strip.svg">
+    <div class="container">
+      <%= yield %>
+    </div>
+</div>
 
 </body>
 </html>
