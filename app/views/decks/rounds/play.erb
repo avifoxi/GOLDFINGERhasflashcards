@@ -4,7 +4,7 @@
 
 <% if session[:result] == "correct" %>
   <div class="result">Your answer was satisfactory. Perhaps you are more competent than our records suggest.</div>
-<% else %>
+<% elsif session[:result] == "incorrect" %>
   <div class="result">Incorrect, unacceptable, and disappointing. Do try harder next time...</div>
 <% end %>
 
