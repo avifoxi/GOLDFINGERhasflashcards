@@ -36,6 +36,16 @@
   letter-spacing: 1.25px;
 }
 
+.container ul{
+  list-style-type: none;
+}
+
+.container li{
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 1.25em;
+  letter-spacing: 1.25px;
+}
+
 .container .question{
   font-family: 'Domine', serif;
   font-size: 1em;
@@ -98,6 +108,7 @@ span {
 .navigation{
   text-align: center;
   font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 1.1em;
   letter-spacing: .2em;
   text-shadow: 1px 1px 1px #FFD700,.5px.5px .5px #b29600;
 }
