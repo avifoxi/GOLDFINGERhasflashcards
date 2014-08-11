@@ -1,8 +1,48 @@
 .container {
+  position: relative;
+  top: -475px;
   margin: 20px auto;
-  width: 600px;
-  padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
+  width: 70%;
+  padding: 0p x 20px 20px 20px;
+}
+
+.container h2{
+  font-family: 'Domine', serif;
+  font-size: 2em;
+  color: #e5c100;
+  text-shadow: 1px 1px 1px #000000,
+  2px 2px 2px #000000;
+}
+
+.container h3{
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 1.5em;
+}
+
+.container p{
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 1em;
+  letter-spacing: 1.25px;
+}
+
+.container .question{
+  font-family: 'Domine', serif;
+  font-size: 1em;
+  letter-spacing: -.5px;
+  font-weight: bold;
+}
+
+.container .result{
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 1em;
+  letter-spacing: 1.25px;
+}
+
+.style{
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3em;
 }
 
 body {
@@ -64,16 +104,36 @@ th {
 }
 
 
-a:link {
+.navigation a:link {
   text-decoration: none;
   color: grey;
 }
 
-a:visited {
+.navigation a:visited {
   color:#F8F8F8;
 }
 
-a:hover{
+.navigation a:hover{
+  color: #FFD700;
+}
+
+.container a{
+  font-family: 'Open Sans Condensed', sans-serif;
+  letter-spacing: .2em;
+  color: #e5c100;
+  text-shadow: 1px 1px 1px #000000,
+  2px 2px 2px #000000;
+}
+
+.container a:link {
+  text-decoration: none;
+}
+
+.container a:visited {
+  color:#F8F8F8;
+}
+
+.container a:hover{
   color: #FFD700;
 }
 
@@ -85,6 +145,15 @@ a:hover{
   color: white;
   text-shadow: 1px 1px 1px #FFD700,.5px.5px .5px #b29600;
   letter-spacing: .2em;
+}
+
+.index_button{
+  background:none;
+  border:none;
+  padding:0;
+  cursor: pointer;
+  font-family: 'Open Sans Condensed', sans-serif;
+  text-decoration: underline;
 }
 
 .linkbutton:hover{
